@@ -1,12 +1,11 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    outline: none;
-  }
-  
-  
-  /* body{
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+/* body{
     font-family: Open Sans;
     display: flex;
     justify-content: center;
@@ -17,130 +16,263 @@
     background: linear-gradient(90deg, rgba(60,60,242,1) 0%, rgba(98,245,230,1) 52%, rgba(60,60,242,1) 100%);
     background-size: cover;
   } */
-  
-  .mainbox{
-    position: relative;
-    width: 500px;
-    height: 500px;
-  }
-  .mainbox:after{
-    position: absolute;
-    content: '';
-    width: 32px;
-    height: 32px;
-    background: url('../../assets/download.png') no-repeat;
-    background-size: 32px;
-    right: -30px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .box{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-radius: 50%;
-    border: 10px solid #fff;
-    overflow: hidden;
-    transition: all cubic-bezier(0, 0.52, 1, 1) 5s;
-  }
-  span{
-    width: 50%;
-    height: 50%;
-    display: inline-block;
-    position: absolute;
-  }
-  .span1{
-    clip-path: polygon(0 92%, 100% 50%, 0 8%);
-    background-color: #fffb00;
-    top: 120px;
-    left: 0;
-  }
-  .span2{
-    clip-path: polygon(100% 92%, 0 50%, 100% 8%);
-    background-color: #ff4fa1;
-    top: 120px;
-    right: 0;
-  }
-  .span3{
-    clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
-    background-color: #ffaa00;
-    bottom: 0;
-    left: 120px;
-  }
-  .span4{
-    clip-path: polygon(50% 100%, 92% 0, 8% 0);
-    background-color: #22ff00;
-    top: 0;
-    left: 120px;
-  }
-  
-  
-  .box1 .span3 b{
-     transform: translate(-50%, -50%) rotate(-270deg);
-  }
-  .box1 .span1 b,
-  .box2 .span1 b{
-    transform: translate(-50%, -50%) rotate(185deg);
-  }
-  .box2 .span3 b{
-    transform: translate(-50%, -50%) rotate(90deg);
-  }
-  .box1 .span4 b,
-  .box2 .span4 b{
-    transform: translate(-50%, -50%) rotate(-85deg);
-  }
-  
-  .box2{
-    width: 100%;
-    height: 100%;
-    transform: rotate(-135deg);
-  }
-  span b{
-    font-size: 24px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  
-  }
-  
-  .spin{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    background-color: #001aff;
-    color: #fff;
-    box-shadow: 0 5px 20px #000;
-    font-weight: bold;
-    font-size: 22px;
-    cursor: pointer;
-  }
-  .spin:active{
-    width: 70px;
-    height: 70px;
-    font-size: 20px;
-  }
-  
-  .mainbox.animate:after{
-    animation: animateArrow 0.7s ease infinite;
-  }
-  @keyframes animateArrow{
-    50%{
-      right: -40px;
-    }
-  }
 
-  .startRotate {
-    animation:startRotate 1s linear infinite;
+.mainbox {
+  position: relative;
+  width: 430px;
+  height: 430px;
+  margin: 70px auto;
+}
+
+.mainbox::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 20px #fff023;
+  z-index: 200;
+}
+
+.mainbox:after {
+  position: absolute;
+  content: "";
+  width: 32px;
+  height: 32px;
+  background-size: 32px;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  border: 10px solid #fff;
+  overflow: hidden;
+  transition: all cubic-bezier(0, 0.52, 1, 1) 5s;
+  animation: startRotate 1s linear infinite paused;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 22px 8px #eeeeee;
+  z-index: 100;
+}
+
+span {
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.spanB11 {
+  clip-path: polygon(0 92%, 100% 50%, 0 8%);
+  background-color: #eeeeee;
+  top: 102.7px;
+  left: 0;
+}
+.spanB25 {
+  clip-path: polygon(0 92%, 100% 50%, 0 8%);
+  background-color: #fcb91f;
+  top: 102.7px;
+  left: 0;
+}
+.spanB12 {
+  clip-path: polygon(100% 92%, 0 50%, 100% 8%);
+  background-color: #eeeeee;
+  top: 102.7px;
+  right: 0;
+}
+.spanB26 {
+  clip-path: polygon(100% 92%, 0 50%, 100% 8%);
+  background-color: #fcb91f;
+  top: 102.7px;
+  right: 0;
+}
+.spanB13 {
+  clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+  background-color: #eeeeee;
+  background-image: url();
+  bottom: 0;
+  left: 102.7px;
+}
+.spanB27 {
+  clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+  background-color: #fcb91f;
+  background-image: url();
+  bottom: 0;
+  left: 102.7px;
+}
+.spanB14 {
+  clip-path: polygon(50% 100%, 92% 0, 8% 0);
+  background-color: #eeeeee;
+  top: 0;
+  left: 102.7px;
+}
+.spanB28 {
+  clip-path: polygon(50% 100%, 92% 0, 8% 0);
+  background-color: #fcb91f;
+  top: 0;
+  left: 102.7px;
+}
+
+.box1 .spanB13 b {
+  width: 34%;
+  height: 50%;
+  transform: translate(-50%, -24%) rotate(-180deg);
+  background-image: url("../../assets/banimod.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.box1 .spanB11 b {
+  width: 34%;
+  height: 50%;
+  transform: translate(-74%, -50%) rotate(270deg);
+  background-image: url("../../assets/banimod.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.box2 .spanB25 b {
+  width: 34%;
+  height: 50%;
+  transform: translate(-74%, -50%) rotate(270deg);
+  background-image: url("../../assets/banimod.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.box1 .spanB12 b {
+  width: 34%;
+  height: 50%;
+  transform: translate(-24%, -50%) rotate(90deg);
+  background-image: url("../../assets/banimod.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.box2 .spanB26 b {
+  width: 34%;
+  height: 50%;
+  transform: translate(-24%, -50%) rotate(90deg);
+  background-image: url("../../assets/banimod.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.box2 .spanB27 b {
+  width: 34%;
+  height: 50%;
+  transform: translate(-50%, -24%) rotate(180deg);
+  background-image: url("../../assets/banimod.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.box1 .spanB14 b {
+  width: 34%;
+  height: 50%;
+  transform: translate(-50%, -74%) rotate(0deg);
+  background-image: url("../../assets/banimod.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.box2 .spanB28 b {
+  width: 34%;
+  height: 50%;
+  transform: translate(-50%, -74%) rotate(0deg);
+  background-image: url("../../assets/banimod.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.box2 {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-135deg);
+}
+span b {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50.6%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background-image: url("../../assets/spinner.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #e84e0f;
+  font-weight: 900;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 250;
+}
+
+.lights {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 5px;
+  left: 6.5px;
+}
+
+.light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: -1px 0 3px gray;
+  background-color: #e0e0e085;
+  z-index: 210;
+  animation: activeLight step-end 0.5s infinite alternate;
+}
+.odd {
+  animation-delay: 0.5s;
+}
+
+.mainbox.animate:after {
+  animation: animateArrow 0.7s ease infinite;
+}
+@keyframes animateArrow {
+  50% {
+    right: -40px;
   }
+}
+
+.startRotate {
+  animation: startRotate 1s linear infinite;
+}
+
+.stop {
+  animation-play-state: paused;
+}
 
 @keyframes startRotate {
-100% {
+  100% {
     transform: rotate(360deg);
+  }
 }
+
+@keyframes activeLight {
+  50% {
+    background-color: rgb(255, 255, 255);
+  }
 }
